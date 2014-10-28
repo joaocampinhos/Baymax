@@ -2,10 +2,11 @@
 <html>
   <head></head>
   <body>
-    <script src="../BayMax.js"></script>
+    <script src="../node_modules/traceur/bin/traceur-runtime.js"></script>
+    <script src="../baymax66.js"></script>
     <script>
       window.onload = function() {
-        var game = new Baymax.game(800,600,32,"canvas");
+        var game = new Baymax({width:800,height:600});
       };
     </script>
   </body>

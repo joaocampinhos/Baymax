@@ -1,21 +1,32 @@
-var Baymax = {
-  version: '0.0.0'
-};
-
-Baymax.game = function(width, height, tile, canvas) {
-  this.width = width || 800;
-  this.height = height || 600;
-  this.tile = tile || 32;
-  this.canvas = document.createElement('canvas');
-  this.canvas.width = this.width;
-  this.canvas.height = this.height;
-  document.body.appendChild(this.canvas);
-  Baymax.log('Game created');
+class Log {
+  log(text) {
+    console.log('%c %c '+text+' %c ', 'background: #6d3f88;', 'background: #be3223; color: #eee;', 'background-color: #6d3f88;');
+  }
 }
 
-Baymax.log = function(text) {
-  console.log('%c %c '+text+' %c ', 'background: #6d3f88;', 'background: #be3223; color: #eee;', 'background-color: #6d3f88;');
+class Canvas {
+  constructor(options) {
+    this.canvas = document.createElement('canvas');
+    this.canvas.width = options.width;
+    this.canvas.height = options.height;
+    this.append();
+  }
+  append() {
+    document.body.appendChild(this.canvas);
+  }
 }
 
-Baymax.log('Baymax v'+Baymax.version+' Loaded');
+class Baymax extends Log{
+  constructor(options) {
+    this._version = '0.0.0'; //TODO: get from package.json
+    this.width = options.width;
+    this.height = options.height;
+    this.game = new Canvas({width: options.width, height: options.height});
+    this.version();
+  }
+  version() {
+    this.log('Baymax v'+this._version+' Loaded');
+  }
+}
+
 
