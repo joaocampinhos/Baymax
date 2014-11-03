@@ -7,7 +7,23 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Manel",
-  "dependencies": {
-    "traceur": "0.0.50"
+  "dependencies": {},
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joaocampinhos/Baymax.git"
+  },
+  "bugs": {
+    "url": "https://github.com/joaocampinhos/Baymax/issues"
+  },
+  "homepage": "https://github.com/joaocampinhos/Baymax",
+  "devDependencies": {
+    "gulp": "^3.8.9",
+    "gulp-6to5": "^1.0.1",
+    "gulp-concat": "^2.4.1",
+    "gulp-plumber": "^0.6.6",
+    "gulp-sourcemaps": "^1.2.7",
   }
 }
